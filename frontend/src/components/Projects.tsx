@@ -110,7 +110,7 @@ export const Projects = () => {
                   <motion.h3 layoutId={`title-${project.id}`} className="text-xl font-black text-white mb-4 tracking-tighter uppercase group-hover:text-cyan-400 transition-colors">{project.title}</motion.h3>
                   <p className="text-gray-500 text-xs mb-8 line-clamp-3 font-medium uppercase tracking-tight leading-relaxed">{project.description}</p>
                   <div className="mt-auto pt-8 border-t border-white/5 flex flex-wrap gap-2">
-                    {project.tech.map(t => (
+                    {project.tech.map((t: string) => (
                       <span key={t} className="px-3 py-1 text-[9px] uppercase font-black tracking-widest text-cyan-400/60 bg-cyan-400/5 border border-cyan-400/10 rounded">
                         {t}
                       </span>
@@ -182,7 +182,7 @@ export const Projects = () => {
                      <div className="bg-white/[0.03] p-8 rounded-2xl border border-white/5">
                         <h4 className="text-[10px] font-black text-gray-500 uppercase tracking-widest mb-6">Technological Stack</h4>
                         <div className="flex flex-wrap gap-3">
-                           {project.tech.map(t => <span key={t} className="px-4 py-2 bg-cyan-400/10 border border-cyan-400/20 rounded-xl text-xs font-black text-cyan-400 uppercase tracking-widest">{t}</span>)}
+                           {project.tech.map((t: string) => <span key={t} className="px-4 py-2 bg-cyan-400/10 border border-cyan-400/20 rounded-xl text-xs font-black text-cyan-400 uppercase tracking-widest">{t}</span>)}
                         </div>
                      </div>
                      <div className="flex gap-4 pt-4">

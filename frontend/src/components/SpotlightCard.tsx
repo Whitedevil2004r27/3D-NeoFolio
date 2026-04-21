@@ -6,17 +6,24 @@ interface SpotlightCardProps {
   className?: string;
   spotlightColor?: string;
   onClick?: () => void;
+  onMouseEnter?: () => void;
 }
 
 const SpotlightCard: React.FC<SpotlightCardProps> = ({ 
   children, 
   className = "", 
   spotlightColor = "rgba(0, 243, 255, 0.15)",
-  onClick
+  onClick,
+  onMouseEnter
 }) => {
   const containerRef = useRef<HTMLDivElement>(null);
   const [position, setPosition] = useState({ x: 0, y: 0 });
   const [opacity, setOpacity] = useState(0);
+
+  const handleMouseEnter = () => {
+    setOpacity(1);
+    if (onMouseEnter) onMouseEnter();
+  };
 
   const handleMouseMove = (e: React.MouseEvent<HTMLDivElement>) => {
     if (!containerRef.current) return;
@@ -28,7 +35,7 @@ const SpotlightCard: React.FC<SpotlightCardProps> = ({
     <div
       ref={containerRef}
       onMouseMove={handleMouseMove}
-      onMouseEnter={() => setOpacity(1)}
+      onMouseEnter={handleMouseEnter}
       onMouseLeave={() => setOpacity(0)}
       onClick={onClick}
       className={`spotlight-card group cursor-pointer ${className}`}

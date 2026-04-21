@@ -7,6 +7,7 @@ export const siteConfig = {
   logoImage: "https://images.unsplash.com/photo-1614850523296-d8c1af93d400?w=100&h=100&fit=crop&q=80",
   resumeLink: "#",
   heroImage: "https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?w=800&h=800&fit=crop&q=80",
+  aboutImage: "https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?w=800&h=800&fit=crop&q=80",
   heroSkills: "React • Next.js • TypeScript • Three.js • GSAP",
   aboutBio1: "Hi, I'm Ravikumar J, a developer dedicated to building high-performance 3D web experiences.",
   aboutBio2: "I specialize in bridging the gap between cinematic design and modular engineering.",
