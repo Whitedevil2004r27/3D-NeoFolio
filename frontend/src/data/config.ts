@@ -1,24 +1,24 @@
 import { Mail, Phone, Github, Linkedin } from "lucide-react";
 
 export const siteConfig = {
-  developerName: "VAITHY RK",
-  developerTitle: "FULL-STACK 3D ARCHITECT",
-  logoText: "NEO-RK",
+  developerName: "PROJECT NEO",
+  developerTitle: "SYSTEM ARCHITECT",
+  logoText: "NEOFOLIO",
   logoImage: "https://images.unsplash.com/photo-1614850523296-d8c1af93d400?w=100&h=100&fit=crop&q=80",
   resumeLink: "#",
   heroImage: "https://images.unsplash.com/photo-1550751827-4bd374c3f58b?w=800&h=800&fit=crop&q=80",
   aboutImage: "https://images.unsplash.com/photo-1518770660439-4636190af475?w=800&h=800&fit=crop&q=80",
   heroSkills: "TypeScript • React • Next.js • Three.js • Node.js",
-  aboutBio1: "As a <strong>System Architect</strong>, I specialize in crafting immersive digital ecosystems that blend high-performance engineering with cinematic visual design.",
-  aboutBio2: "My architecture is built on the foundation of <strong>Next.js</strong>, <strong>Three.js</strong>, and <strong>Framer Motion</strong>, ensuring every interaction is fluid, intentional, and high-impact.",
-  aboutBio3: "From decentralized interfaces to AI-driven visualizations, I push the boundaries of what is possible on the modern web.",
+  aboutBio1: "NEOFOLIO-3D is an immersive architecture designed for high-performance visual identity and modular engineering.",
+  aboutBio2: "This system specializes in bridging the gap between cinematic design and next-generation codebases.",
+  aboutBio3: "Powered by Next.js, Framer Motion, and Three.js for seamless interactive experiences.",
   aboutBio4: "SYSTEM OPERATIONAL: INITIATE CONNECTION TO EXPLORE THE VAULT.",
-  email: "vaithyrk@professional.dev",
-  phone: "+91 (000) 000-0000",
-  github: "https://github.com/vaithyrk",
-  githubUsername: "vaithyrk",
-  linkedin: "https://linkedin.com/in/vaithyrk",
-  footerText: `© ${new Date().getFullYear()} VAITHY RK | NEO-SYSTEMS`,
+  email: "contact@neo-folio.template",
+  phone: "+0 (000) 000-0000",
+  github: "https://github.com/neo-folio-template",
+  githubUsername: "neo-folio-template",
+  linkedin: "https://linkedin.com/in/neo-folio",
+  footerText: `© ${new Date().getFullYear()} NEOFOLIO-3D | SYSTEM ARCHITECTURE`,
 
   // Theme Settings
   themes: [

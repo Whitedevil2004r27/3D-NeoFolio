@@ -39,7 +39,7 @@ export const Logo = () => {
       
       <div className="ml-3 hidden sm:block">
         <span className="text-xl font-black bg-gradient-to-r from-cyan-400 to-purple-500 bg-clip-text text-transparent uppercase tracking-tighter leading-none">
-          NEO-RK<span className="text-gray-500 font-light ml-1">SYSTEMS</span>
+          NEOFOLIO<span className="text-gray-500 font-light ml-1">3D</span>
         </span>
       </div>
     </div>

@@ -1,4 +1,4 @@
-# 🌌 NEO-RK | Next-Gen 3D Portfolio Ecosystem
+# 🌌 NEOFOLIO-3D | Next-Gen Portfolio Template
 
 A high-performance, immersive full-stack portfolio architecture blending **Next.js 14**, **Three.js**, and a modular **Express.js** backend. Designed for developers who demand a premium, technical visual identity.
 
@@ -6,7 +6,7 @@ A high-performance, immersive full-stack portfolio architecture blending **Next.
 
 ## 📸 Visual Preview
 
-![NEO-RK Hero Section](./screenshots/hero.png)
+![NEOFOLIO-3D Hero Section](./screenshots/hero.png)
 
 <p align="center">
   <img src="./screenshots/metrics.png" width="48%" />
@@ -78,8 +78,8 @@ The entire system is controlled via a single configuration file. Update your ide
 
 ```typescript
 export const siteConfig = {
-  developerName: "VAITHY RK",
-  developerTitle: "FULL-STACK 3D ARCHITECT",
+  developerName: "PROJECT NEO",
+  developerTitle: "SYSTEM ARCHITECT",
   // ... update other fields as needed
 };
 ```
@@ -92,4 +92,4 @@ The contact form in the **TERMINAL** section is fully integrated. Submissions ar
 
 ---
 
-© 2024 VAITHY RK | NEO-SYSTEMS ARCHITECTURE
+© 2024 NEOFOLIO-3D | SYSTEM ARCHITECTURE
