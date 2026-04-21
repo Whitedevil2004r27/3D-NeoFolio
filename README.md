@@ -4,6 +4,17 @@ A high-performance, immersive full-stack portfolio architecture blending **Next.
 
 ---
 
+## 📸 Visual Preview
+
+![NEO-RK Hero Section](./screenshots/hero.png)
+
+<p align="center">
+  <img src="./screenshots/metrics.png" width="48%" />
+  <img src="./screenshots/ai.png" width="48%" />
+</p>
+
+---
+
 ## 💎 Premium Features
 
 ### 🛠️ Core Technology Stack
@@ -78,26 +89,6 @@ export const siteConfig = {
 ## 📬 Contact Protocol
 
 The contact form in the **TERMINAL** section is fully integrated. Submissions are processed by the backend and logged to the system terminal, simulating a secure data transmission.
-
----
-
-## 🚀 System Output
-
-### 🖥️ Initialization Sequence
-```text
-[22:13:04] INITIALIZING KERNEL...
-[22:13:05] LOADING NEURAL NETWORKS...
-[22:13:06] MOUNTING 3D ASSETS...
-[22:13:07] ESTABLISHING SECURE PROTOCOLS...
-[22:13:08] SYNCING REPOSITORY DATA...
-[22:13:09] SYSTEM CORE OPERATIONAL.
-```
-
-### 🛰️ Telemetry Diagnostics
-The integrated dashboard provides real-time feedback from the system core:
-- **Core Uptime**: Synchronized with server start.
-- **Neural Load**: Dynamic CPU usage simulation.
-- **Sync Signal**: Real-time environment monitoring.
 
 ---
 
