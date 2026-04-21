@@ -14,7 +14,7 @@ export const Skills = () => {
   return (
     <section id="skills" className="section-padding relative">
       <div className="max-container">
-        <h2 className="text-4xl md:text-6xl font-black mb-20 text-center neon-text uppercase tracking-tight">KNOWLEDGE BASE</h2>
+        <h2 className="text-3xl md:text-5xl font-black mb-12 md:mb-16 text-center neon-text uppercase tracking-tight">KNOWLEDGE BASE</h2>
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-10">
           {skillsData.map((category, idx) => (
             <motion.div

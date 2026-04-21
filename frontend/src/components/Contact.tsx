@@ -7,6 +7,7 @@ import { toast } from "sonner";
 import { contactLinks } from "../data/config";
 
 import SpotlightCard from "./SpotlightCard";
+import Magnetic from "./Magnetic";
 
 export const Contact = () => {
   const [formData, setFormData] = useState({ name: "", email: "", message: "" });
@@ -41,7 +42,7 @@ export const Contact = () => {
   return (
     <section id="contact" className="min-h-screen section-padding relative overflow-hidden">
       <div className="max-container">
-        <h2 className="text-4xl md:text-6xl font-black mb-20 text-center neon-text uppercase tracking-tight leading-none">Inquire Within</h2>
+        <h2 className="text-3xl md:text-5xl font-black mb-12 md:mb-16 text-center neon-text uppercase tracking-tight leading-none">Inquire Within</h2>
         <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 lg:gap-20">
           <motion.div
             initial={{ opacity: 0, x: -30 }}
@@ -103,12 +104,14 @@ export const Contact = () => {
                     />
                   </div>
                 </div>
-                <button 
-                  type="submit" disabled={isSubmitting}
-                  className="w-full cyber-button py-6 rounded-xl flex items-center justify-center gap-4 text-lg font-black uppercase tracking-widest hover:shadow-[0_0_20px_rgba(0,243,255,0.3)]"
-                >
-                  {isSubmitting ? "TRANSMITTING..." : <>INITIATE CONTACT <Send className="w-5 h-5 shadow-cyan-400/50" /></>}
-                </button>
+                <Magnetic>
+                  <button 
+                    type="submit" disabled={isSubmitting}
+                    className="w-full cyber-button py-6 rounded-xl flex items-center justify-center gap-4 text-lg font-black uppercase tracking-widest hover:shadow-[0_0_20px_rgba(0,243,255,0.3)]"
+                  >
+                    {isSubmitting ? "TRANSMITTING..." : <>INITIATE CONTACT <Send className="w-5 h-5 shadow-cyan-400/50" /></>}
+                  </button>
+                </Magnetic>
               </div>
             </SpotlightCard>
           </motion.form>

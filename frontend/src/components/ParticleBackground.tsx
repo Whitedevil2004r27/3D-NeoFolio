@@ -61,7 +61,7 @@ const TechNodes = () => {
 
 export const ParticleBackground = () => {
   return (
-    <div className="fixed inset-0 z-[-1] pointer-events-none bg-black">
+    <div className="fixed inset-0 z-[-10] pointer-events-none bg-black">
       <Canvas>
         <PerspectiveCamera makeDefault position={[0, 0, 15]} />
         <Stars radius={100} depth={50} count={3000} factor={4} saturation={0} fade speed={1} />

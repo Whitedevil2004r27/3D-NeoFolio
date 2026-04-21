@@ -14,12 +14,18 @@ export const About = () => {
           transition={{ duration: 1 }}
           viewport={{ once: true }}
         >
-          <h2 className="text-3xl md:text-5xl font-black mb-10 neon-text uppercase tracking-tighter">THE ARCHITECT</h2>
+          <h2 
+            className="text-3xl md:text-4xl font-black mb-8 neon-text uppercase tracking-tighter glitch-text" 
+            data-text="THE ARCHITECT"
+          >
+            THE ARCHITECT
+          </h2>
           <SpotlightCard className="p-1">
-            <div className="bg-black/80 p-8 md:p-12 space-y-6">
+            <div className="bg-black/80 p-8 md:p-12 space-y-8">
               <p className="text-base md:text-xl leading-relaxed text-gray-300 font-light" dangerouslySetInnerHTML={{ __html: siteConfig.aboutBio1 }} />
               <p className="text-base md:text-xl leading-relaxed text-gray-400 font-light" dangerouslySetInnerHTML={{ __html: siteConfig.aboutBio2 }} />
-              <p className="text-base md:text-xl leading-relaxed text-cyan-400 font-bold border-l-4 border-cyan-400/30 pl-6" dangerouslySetInnerHTML={{ __html: siteConfig.aboutBio4 }} />
+              <p className="text-sm md:text-base leading-relaxed text-gray-500 font-light italic" dangerouslySetInnerHTML={{ __html: siteConfig.aboutBio3 }} />
+              <p className="text-base md:text-xl leading-relaxed text-cyan-400 font-black border-l-4 border-cyan-400/30 pl-6 uppercase tracking-tighter" dangerouslySetInnerHTML={{ __html: siteConfig.aboutBio4 }} />
             </div>
           </SpotlightCard>
         </motion.div>

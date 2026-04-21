@@ -3,7 +3,6 @@ import { useState } from "react";
 import { AnimatePresence } from "framer-motion";
 import { TerminalLoader } from "./TerminalLoader";
 import { SoundProvider } from "./SoundSystem";
-import { SplashCursor } from "./SplashCursor";
 import { SmoothScroll } from "./SmoothScroll";
 
 export const MainProvider = ({ children }: { children: React.ReactNode }) => {
@@ -22,7 +21,6 @@ export const MainProvider = ({ children }: { children: React.ReactNode }) => {
       
       {!isLoading && (
         <div key="content">
-          <SplashCursor />
           <SmoothScroll>
             {children}
           </SmoothScroll>

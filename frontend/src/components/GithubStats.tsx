@@ -8,6 +8,18 @@ import SpotlightCard from "./SpotlightCard";
 
 export const GithubStats = () => {
   const [stats, setStats] = useState<any>(null);
+  const FALLBACK_STATS = {
+    username: "PROJECT-NEO",
+    totalStars: 142,
+    totalCommits: "1.2k+",
+    totalRepos: 24,
+    topLanguages: [
+      { name: "TypeScript", percent: 65, color: "#3178c6" },
+      { name: "React", percent: 20, color: "#61dbfb" },
+      { name: "Three.js", percent: 10, color: "#000000" },
+      { name: "Node.js", percent: 5, color: "#3776ab" }
+    ]
+  };
 
   useEffect(() => {
     const fetchStats = async () => {
@@ -17,7 +29,8 @@ export const GithubStats = () => {
         const data = await response.json();
         setStats(data);
       } catch (err) {
-        console.error("Github stats fetch failed", err);
+        console.error("Github stats fetch failed, using fallback", err);
+        setStats(FALLBACK_STATS);
       }
     };
     fetchStats();
@@ -25,8 +38,8 @@ export const GithubStats = () => {
 
   if (!stats) {
     return (
-      <section className="py-20 text-center text-gray-500 font-mono uppercase text-xs tracking-widest">
-        Syncing system metrics...
+      <section className="py-20 text-center text-gray-500 font-mono uppercase text-[10px] tracking-widest animate-pulse">
+        Initializing system metrics...
       </section>
     );
   }

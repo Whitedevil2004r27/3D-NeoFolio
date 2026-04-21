@@ -65,11 +65,11 @@ export const Navigation = () => {
       />
       
       <div className="w-full px-4 md:px-6 lg:px-8 py-3.5 flex justify-between items-center relative z-[105]">
-        <div className="flex items-center gap-8">
+        <div className="flex items-center gap-4 md:gap-8">
           <div className="cursor-pointer hover:scale-105 transition-transform" onClick={() => handleNavClick("hero")}>
             <Logo />
           </div>
-          <div className="hidden xl:block border-l border-white/10 pl-8">
+          <div className="hidden lg:block border-l border-white/10 pl-6 md:pl-8">
             <LiveStatus />
           </div>
         </div>

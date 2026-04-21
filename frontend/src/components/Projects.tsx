@@ -6,6 +6,7 @@ import { useState, useEffect } from "react";
 import { siteConfig } from "../data/config";
 import SpotlightCard from "./SpotlightCard";
 import { useSound } from "./SoundSystem";
+import { ProjectHologram } from "./ProjectHologram";
 
 const FALLBACK_PROJECTS = [
   {
@@ -16,7 +17,7 @@ const FALLBACK_PROJECTS = [
     image: "https://images.unsplash.com/photo-1639762681485-074b7f938ba0?w=1200&h=800&fit=crop&q=80",
     stars: 842,
     tech: ["React", "Three.js", "Solidity", "GSAP"],
-    github: "https://github.com/Whitedevil2004r27",
+    github: "https://github.com/neo-folio-template",
     live: "#"
   },
   {
@@ -27,7 +28,7 @@ const FALLBACK_PROJECTS = [
     image: "https://images.unsplash.com/photo-1677442136019-21780ecad995?w=1200&h=800&fit=crop&q=80",
     stars: 567,
     tech: ["Python", "PyTorch", "Next.js", "D3.js"],
-    github: "https://github.com/Whitedevil2004r27",
+    github: "https://github.com/neo-folio-template",
     live: "#"
   },
   {
@@ -38,7 +39,7 @@ const FALLBACK_PROJECTS = [
     image: "https://images.unsplash.com/photo-1629904853716-f0bc54eea481?w=1200&h=800&fit=crop&q=80",
     stars: 1205,
     tech: ["TypeScript", "Rust", "WebAssembly", "Node.js"],
-    github: "https://github.com/Whitedevil2004r27",
+    github: "https://github.com/neo-folio-template",
     live: "#"
   }
 ];
@@ -78,20 +79,45 @@ export const Projects = () => {
   return (
     <section id="projects" className="section-padding relative">
       <div className="max-container">
-        <div className="text-center mb-16 md:mb-24">
-          <h2 className="text-4xl md:text-6xl font-black mb-6 neon-text uppercase tracking-tight">System Artifacts</h2>
+        <div className="text-center mb-12 md:mb-16">
+          <h2 
+            className="text-3xl md:text-5xl font-black mb-6 neon-text uppercase tracking-tight glitch-text" 
+            data-text="SYSTEM ARTIFACTS"
+          >
+            SYSTEM ARTIFACTS
+          </h2>
           <div className="w-24 h-1 bg-cyan-400 mx-auto mb-8 shadow-[0_0_15px_rgba(0,243,255,0.5)]" />
           <p className="text-lg md:text-2xl text-gray-500 max-w-2xl mx-auto font-light leading-relaxed uppercase tracking-widest">Repository classification and data extraction.</p>
         </div>
 
-        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-10">
+        <motion.div 
+          variants={{
+            hidden: { opacity: 0 },
+            show: {
+              opacity: 1,
+              transition: {
+                staggerChildren: 0.2
+              }
+            }
+          }}
+          initial="hidden"
+          whileInView="show"
+          viewport={{ once: true }}
+          className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6 md:gap-10"
+        >
           {liveProjects.map((project) => (
-            <SpotlightCard
+            <motion.div
               key={project.id}
-              onClick={() => { playClick(); setSelectedId(project.id); }}
-              onMouseEnter={playHover}
-              className="p-1 cursor-pointer group"
+              variants={{
+                hidden: { opacity: 0, y: 30 },
+                show: { opacity: 1, y: 0, transition: { duration: 0.8, ease: "easeOut" } }
+              }}
             >
+              <SpotlightCard
+                onClick={() => { playClick(); setSelectedId(project.id); }}
+                onMouseEnter={playHover}
+                className="p-1 cursor-pointer group h-full"
+              >
               <div className="bg-black/90 rounded-lg overflow-hidden h-full flex flex-col border border-white/5 group-hover:border-cyan-400/30 transition-colors">
                 <div className="relative h-60 overflow-hidden">
                   <motion.img 
@@ -101,6 +127,7 @@ export const Projects = () => {
                     className="w-full h-full object-cover transition-transform duration-1000 group-hover:scale-110 opacity-60 group-hover:opacity-100" 
                   />
                   <div className="absolute inset-0 bg-gradient-to-t from-black via-black/20 to-transparent" />
+                  <ProjectHologram type={project.title} />
                   <div className="absolute top-6 left-6 flex items-center gap-2 px-3 py-1 bg-black/60 backdrop-blur-md rounded-full border border-white/10">
                     <Star size={12} className="text-yellow-500" />
                     <span className="text-[10px] font-black text-white">{project.stars}</span>
@@ -119,8 +146,9 @@ export const Projects = () => {
                 </div>
               </div>
             </SpotlightCard>
+          </motion.div>
           ))}
-        </div>
+        </motion.div>
       </div>
 
       <AnimatePresence>

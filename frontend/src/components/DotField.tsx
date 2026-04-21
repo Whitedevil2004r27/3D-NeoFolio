@@ -108,7 +108,11 @@ const DotField = ({
     };
   }, [chunkSize, dotSize, dotColor]);
 
-  return <canvas ref={canvasRef} className="dot-field-canvas" />;
+  return (
+    <div className="absolute inset-0 pointer-events-none z-0">
+      <canvas ref={canvasRef} className="block w-full h-full" />
+    </div>
+  );
 };
 
 export default memo(DotField);
