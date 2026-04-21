@@ -38,7 +38,7 @@ export const Hero = () => {
               className="responsive-profile overflow-hidden relative"
             >
               <img src={siteConfig.heroImage} alt={siteConfig.developerName} className="w-full h-full object-cover" />
-              <div className="absolute inset-0 bg-cyan-400/10 mix-blend-overlay" />
+              <div className="absolute inset-0 bg-primary/10 mix-blend-overlay" />
             </motion.div>
           </BorderGlow>
         </motion.div>
@@ -49,7 +49,7 @@ export const Hero = () => {
               className="relative inline-block hover:animate-pulse transition-all cursor-default"
               onMouseEnter={triggerNameScramble}
             >
-              HI, I'M <span className="text-transparent bg-clip-text bg-gradient-to-r from-cyan-400 via-blue-500 to-purple-600 drop-shadow-2xl">{scrambledName}</span>
+              HI, I'M <span className="text-transparent bg-clip-text bg-gradient-to-r from-primary via-secondary to-purple-600 drop-shadow-2xl">{scrambledName}</span>
             </span>
           </h1>
           <h2 className="text-xl sm:text-2xl md:text-3xl text-gray-400 mb-8 font-extralight tracking-[0.4em] uppercase min-h-[1.5em]">{scrambledTitle}</h2>
@@ -77,8 +77,8 @@ export const Hero = () => {
         style={{ y: y2 }}
         className="absolute bottom-10 left-1/2 -translate-x-1/2 flex flex-col items-center gap-2 opacity-50"
       >
-        <span className="text-[10px] font-black tracking-[0.5em] text-cyan-400 uppercase">Scroll to descend</span>
-        <div className="w-[1px] h-12 bg-gradient-to-b from-cyan-400 to-transparent animate-bounce" />
+        <span className="text-[10px] font-black tracking-[0.5em] text-primary uppercase">Scroll to descend</span>
+        <div className="w-[1px] h-12 bg-gradient-to-b from-primary to-transparent animate-bounce" />
       </motion.div>
     </section>
   );

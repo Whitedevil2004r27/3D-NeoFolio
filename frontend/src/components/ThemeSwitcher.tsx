@@ -16,13 +16,20 @@ export const ThemeSwitcher = () => {
     document.documentElement.setAttribute('data-theme', currentTheme.name.toLowerCase().replace(' ', '-'));
   }, [currentTheme]);
 
+  const themeColors: Record<string, string> = {
+    "Cyber Cyan": "bg-cyan-400",
+    "Neon Pink": "bg-pink-500",
+    "Solar Orange": "bg-orange-500"
+  };
+
   return (
     <div className="relative">
       <button 
         onClick={() => setIsOpen(!isOpen)}
-        className="flex items-center gap-2 px-4 py-2 bg-white/5 rounded-full border border-white/10 hover:border-cyan-400/50 transition-all text-xs font-bold uppercase tracking-tighter"
+        className="flex items-center gap-2 px-4 py-2 bg-white/5 rounded-full border border-white/10 hover:border-white/30 transition-all text-xs font-bold uppercase tracking-tighter"
+        style={{ borderColor: isOpen ? 'var(--primary)' : '' }}
       >
-        <span className={`w-3 h-3 rounded-full bg-${currentTheme.primary}`} />
+        <span className={`w-3 h-3 rounded-full ${themeColors[currentTheme.name]}`} />
         {currentTheme.name}
       </button>
 
@@ -43,7 +50,7 @@ export const ThemeSwitcher = () => {
                 }}
                 className="w-full text-left px-4 py-3 hover:bg-white/5 rounded-lg flex items-center gap-3 text-sm font-medium transition-colors"
               >
-                <span className={`w-4 h-4 rounded-full bg-${theme.primary}`} />
+                <span className={`w-4 h-4 rounded-full ${themeColors[theme.name]}`} />
                 {theme.name}
               </button>
             ))}

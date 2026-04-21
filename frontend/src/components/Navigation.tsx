@@ -60,7 +60,7 @@ export const Navigation = () => {
       <div className="absolute inset-0 bg-gradient-to-b from-cyan-400/[0.03] to-transparent pointer-events-none" />
       
       <motion.div 
-        className="absolute bottom-0 left-0 right-0 h-[1.5px] bg-gradient-to-r from-transparent via-cyan-400 to-transparent origin-left z-[101] shadow-[0_0_15px_rgba(0,243,255,0.5)]"
+        className="absolute bottom-0 left-0 right-0 h-[1.5px] bg-gradient-to-r from-transparent via-primary to-transparent origin-left z-[101] shadow-[0_0_15px_rgba(0,243,255,0.5)]"
         style={{ scaleX }}
       />
       
@@ -81,11 +81,11 @@ export const Navigation = () => {
               <button 
                 key={item.id} 
                 onClick={() => handleNavClick(item.id)}
-                className={`text-[11px] font-black uppercase tracking-[0.2em] transition-all duration-300 relative group ${activeSection === item.id ? "text-cyan-400" : "text-gray-500 hover:text-white"}`}
+                className={`text-[11px] font-black uppercase tracking-[0.2em] transition-all duration-300 relative group ${activeSection === item.id ? "text-primary" : "text-gray-500 hover:text-white"}`}
               >
                 {item.label}
                 {activeSection === item.id && (
-                  <motion.div layoutId="active" className="absolute -bottom-1 left-0 right-0 h-0.5 bg-cyan-400" />
+                  <motion.div layoutId="active" className="absolute -bottom-1 left-0 right-0 h-0.5 bg-primary" />
                 )}
               </button>
             ))}
@@ -94,7 +94,7 @@ export const Navigation = () => {
         </div>
 
         {/* Mobile menu button */}
-        <button className="md:hidden text-cyan-400" onClick={() => setIsOpen(!isOpen)}>
+        <button className="md:hidden text-primary" onClick={() => setIsOpen(!isOpen)}>
           {isOpen ? <X size={28} /> : <Menu size={28} />}
         </button>
       </div>
@@ -113,7 +113,7 @@ export const Navigation = () => {
                 <button 
                   key={item.id} 
                   onClick={() => handleNavClick(item.id)}
-                  className={`text-xl font-bold uppercase tracking-tighter text-left ${activeSection === item.id ? "text-cyan-400" : "text-gray-400"}`}
+                  className={`text-xl font-bold uppercase tracking-tighter text-left ${activeSection === item.id ? "text-primary" : "text-gray-400"}`}
                 >
                   {item.label}
                 </button>
