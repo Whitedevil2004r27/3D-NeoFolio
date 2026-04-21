@@ -1,0 +1,106 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+:root {
+  --neon-cyan: #00f3ff;
+  --neon-purple: #bc13fe;
+  --neon-pink: #ff00de;
+}
+
+body {
+  background-color: #000;
+  color: #fff;
+  overflow-x: hidden;
+  @apply antialiased selection:bg-cyan-500/30;
+}
+
+/* Professional Balanced Spacing */
+.section-padding {
+  @apply py-10 md:py-14 lg:py-16 px-6 md:px-10 lg:px-20;
+}
+
+.max-container {
+  @apply max-w-6xl mx-auto w-full;
+}
+
+/* Refined Cyber UI */
+.cyber-card {
+  @apply bg-white/[0.03] backdrop-blur-xl border border-white/10 hover:border-cyan-400/30 transition-all duration-700 rounded-xl overflow-hidden;
+  box-shadow: 0 4px 24px -2px rgba(0, 0, 0, 0.6);
+}
+
+.neon-text {
+  @apply tracking-tight font-black;
+  text-shadow: 0 0 15px rgba(0, 243, 255, 0.15);
+}
+
+.cyber-button {
+  @apply px-5 py-2.5 md:px-7 md:py-3.5 bg-transparent border border-cyan-400/50 text-cyan-400 hover:bg-cyan-400 hover:text-black transition-all duration-500 font-bold uppercase tracking-wider text-xs md:text-sm;
+  box-shadow: 0 0 10px rgba(0, 243, 255, 0.1);
+}
+
+.cyber-grid {
+  background-image: 
+    linear-gradient(rgba(0, 243, 255, 0.03) 1px, transparent 1px),
+    linear-gradient(90deg, rgba(0, 243, 255, 0.03) 1px, transparent 1px);
+  background-size: 30px 30px;
+}
+
+@keyframes float {
+  0%, 100% { transform: translateY(0px); }
+  50% { transform: translateY(-10px); }
+}
+
+.float-animation {
+  animation: float 10s ease-in-out infinite;
+}
+
+/* Optimized Image Scaling */
+.responsive-profile {
+  @apply w-28 h-28 md:w-36 md:h-36 lg:w-48 lg:h-48 rounded-full shadow-2xl;
+}
+
+/* DotField Canvas */
+.dot-field-canvas {
+  @apply fixed inset-0 z-[-1] pointer-events-none;
+}
+
+/* Spotlight Card Styles */
+.spotlight-card {
+  @apply relative overflow-hidden bg-white/[0.03] backdrop-blur-xl border border-white/10 rounded-xl transition-all duration-300;
+}
+
+.spotlight-layer {
+  @apply absolute inset-0 pointer-events-none transition-opacity duration-300;
+}
+
+/* Border Glow Styles */
+.border-glow-container {
+  @apply relative p-[1px] overflow-hidden rounded-xl bg-white/5;
+}
+
+.border-glow-element {
+  @apply absolute inset-[-1000%] opacity-50;
+  animation: rotate 3s linear infinite;
+}
+
+.border-glow-content {
+  @apply relative bg-black rounded-[calc(0.75rem-1px)] h-full w-full overflow-hidden;
+}
+
+@keyframes rotate {
+  from { transform: rotate(0deg); }
+  to { transform: rotate(360deg); }
+}
+
+/* Premium Typography */
+@import url('https://fonts.googleapis.com/css2?family=Outfit:wght@100;300;400;600;900&display=swap');
+
+:root {
+  --font-outfit: 'Outfit', sans-serif;
+}
+
+h1, h2, h3, .neon-text {
+  font-family: var(--font-outfit);
+}
