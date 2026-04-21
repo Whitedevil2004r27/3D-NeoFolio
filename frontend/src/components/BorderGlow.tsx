@@ -19,7 +19,7 @@ const BorderGlow: React.FC<BorderGlowProps> = ({
       <div 
         className="border-glow-element" 
         style={{ 
-          background: `conic-gradient(from 0deg at 50% 50%, transparent 0%, ${glowColor} 50%, transparent 100%)`,
+          background: `conic-gradient(from 0deg at 50% 50%, transparent 0%, var(--primary) 50%, transparent 100%)`,
           animationDuration: `${duration}s`
         }} 
       />

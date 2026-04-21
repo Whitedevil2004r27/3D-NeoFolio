@@ -72,9 +72,10 @@ body {
 
 .cyber-grid {
   background-image: 
-    linear-gradient(rgba(0, 243, 255, 0.03) 1px, transparent 1px),
-    linear-gradient(90deg, rgba(0, 243, 255, 0.03) 1px, transparent 1px);
+    linear-gradient(var(--primary), transparent 1px),
+    linear-gradient(90deg, var(--primary), transparent 1px);
   background-size: 30px 30px;
+  opacity: 0.05;
 }
 
 @keyframes float {
@@ -221,6 +222,6 @@ h1, h2, h3, .neon-text {
 
 /* Custom Selection Color */
 ::selection {
-  background: rgba(0, 243, 255, 0.3);
-  color: white;
+  background: var(--primary);
+  color: #000;
 }

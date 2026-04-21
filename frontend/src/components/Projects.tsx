@@ -86,7 +86,7 @@ export const Projects = () => {
           >
             SYSTEM ARTIFACTS
           </h2>
-          <div className="w-24 h-1 bg-cyan-400 mx-auto mb-8 shadow-[0_0_15px_rgba(0,243,255,0.5)]" />
+          <div className="w-24 h-1 bg-primary mx-auto mb-8 shadow-[0_0_15px_rgba(0,243,255,0.5)]" />
           <p className="text-lg md:text-2xl text-gray-500 max-w-2xl mx-auto font-light leading-relaxed uppercase tracking-widest">Repository classification and data extraction.</p>
         </div>
 
@@ -118,7 +118,7 @@ export const Projects = () => {
                 onMouseEnter={playHover}
                 className="p-1 cursor-pointer group h-full"
               >
-              <div className="bg-black/90 rounded-lg overflow-hidden h-full flex flex-col border border-white/5 group-hover:border-cyan-400/30 transition-colors">
+              <div className="bg-black/90 rounded-lg overflow-hidden h-full flex flex-col border border-white/5 group-hover:border-primary transition-colors">
                 <div className="relative h-60 overflow-hidden">
                   <motion.img 
                     layoutId={`img-${project.id}`} 
@@ -138,7 +138,7 @@ export const Projects = () => {
                   <p className="text-gray-500 text-xs mb-8 line-clamp-3 font-medium uppercase tracking-tight leading-relaxed">{project.description}</p>
                   <div className="mt-auto pt-8 border-t border-white/5 flex flex-wrap gap-2">
                     {project.tech.map((t: string) => (
-                      <span key={t} className="px-3 py-1 text-[9px] uppercase font-black tracking-widest text-cyan-400/60 bg-cyan-400/5 border border-cyan-400/10 rounded">
+                      <span key={t} className="px-3 py-1 text-[9px] uppercase font-black tracking-widest text-primary bg-primary/5 border border-primary/10 rounded">
                         {t}
                       </span>
                     ))}
@@ -171,7 +171,7 @@ export const Projects = () => {
                 <div className="grid grid-cols-1 md:grid-cols-4 gap-6">
                   {/* Bento Header */}
                   <div className="col-span-1 md:col-span-4 flex flex-col md:flex-row items-center gap-8 border-b border-white/10 pb-8">
-                     <div className="w-24 h-24 rounded-2xl bg-gradient-to-br from-cyan-400 to-purple-600 p-0.5">
+                     <div className="w-24 h-24 rounded-2xl bg-gradient-to-br from-primary to-secondary p-0.5">
                         <div className="w-full h-full bg-black rounded-2xl flex items-center justify-center text-4xl font-black text-white">
                            {project.title.charAt(0)}
                         </div>
@@ -185,7 +185,7 @@ export const Projects = () => {
                   {/* Bento Content */}
                   <div className="col-span-1 md:col-span-2 space-y-6">
                      <div className="bg-white/[0.03] p-8 rounded-2xl border border-white/5">
-                        <h4 className="text-[10px] font-black text-cyan-400 uppercase tracking-widest mb-4">Functional Summary</h4>
+                        <h4 className="text-[10px] font-black text-primary uppercase tracking-widest mb-4">Functional Summary</h4>
                         <p className="text-lg text-gray-300 leading-relaxed font-light">{project.longDescription}</p>
                      </div>
                      <div className="grid grid-cols-2 gap-6">
@@ -210,7 +210,7 @@ export const Projects = () => {
                      <div className="bg-white/[0.03] p-8 rounded-2xl border border-white/5">
                         <h4 className="text-[10px] font-black text-gray-500 uppercase tracking-widest mb-6">Technological Stack</h4>
                         <div className="flex flex-wrap gap-3">
-                           {project.tech.map((t: string) => <span key={t} className="px-4 py-2 bg-cyan-400/10 border border-cyan-400/20 rounded-xl text-xs font-black text-cyan-400 uppercase tracking-widest">{t}</span>)}
+                           {project.tech.map((t: string) => <span key={t} className="px-4 py-2 bg-primary/10 border border-primary/20 rounded-xl text-xs font-black text-primary uppercase tracking-widest">{t}</span>)}
                         </div>
                      </div>
                      <div className="flex gap-4 pt-4">

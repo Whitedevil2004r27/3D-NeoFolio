@@ -30,15 +30,15 @@ export const Logo = () => {
           />
           <defs>
             <linearGradient id="neonGradient" x1="0%" y1="0%" x2="100%" y2="100%">
-              <stop offset="0%" stopColor="#22d3ee" />
-              <stop offset="100%" stopColor="#c084fc" />
+              <stop offset="0%" stopColor="var(--primary)" />
+              <stop offset="100%" stopColor="var(--secondary)" />
             </linearGradient>
           </defs>
         </svg>
       </div>
       
       <div className="ml-3 hidden sm:block">
-        <span className="text-xl font-black bg-gradient-to-r from-cyan-400 to-purple-500 bg-clip-text text-transparent uppercase tracking-tighter leading-none">
+        <span className="text-xl font-black bg-gradient-to-r from-primary to-secondary bg-clip-text text-transparent uppercase tracking-tighter leading-none">
           NEOFOLIO<span className="text-gray-500 font-light ml-1">3D</span>
         </span>
       </div>
