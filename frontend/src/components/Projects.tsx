@@ -53,7 +53,7 @@ export const Projects = () => {
   useEffect(() => {
     const fetchRepos = async () => {
       try {
-        const response = await fetch(`http://localhost:5000/api/github/repos/${siteConfig.githubUsername}`);
+        const response = await fetch(`${process.env.NEXT_PUBLIC_API_URL || 'http://localhost:5000'}/api/github/repos/${siteConfig.githubUsername}`);
         if (!response.ok) throw new Error("Repos fetch failed");
         const data = await response.json();
         // If data is valid and not empty, use it; otherwise fallback

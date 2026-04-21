@@ -24,7 +24,7 @@ export const GithubStats = () => {
   useEffect(() => {
     const fetchStats = async () => {
       try {
-        const response = await fetch(`http://localhost:5000/api/github/stats/${siteConfig.githubUsername}`);
+        const response = await fetch(`${process.env.NEXT_PUBLIC_API_URL || 'http://localhost:5000'}/api/github/stats/${siteConfig.githubUsername}`);
         if (!response.ok) throw new Error("Fetch failed");
         const data = await response.json();
         setStats(data);

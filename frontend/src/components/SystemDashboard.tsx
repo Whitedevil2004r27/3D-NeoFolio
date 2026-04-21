@@ -11,7 +11,7 @@ export const SystemDashboard = () => {
   useEffect(() => {
     const fetchData = async () => {
       try {
-        const response = await fetch('http://localhost:5000/api/status');
+        const response = await fetch(`${process.env.NEXT_PUBLIC_API_URL || 'http://localhost:5000'}/api/status`);
         const json = await response.json();
         setData(json.telemetry);
       } catch (err) {

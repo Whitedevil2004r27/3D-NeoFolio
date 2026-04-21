@@ -12,7 +12,7 @@ export const LiveStatus = () => {
   useEffect(() => {
     const fetchStatus = async () => {
       try {
-        const response = await fetch('http://localhost:5000/api/status');
+        const response = await fetch(`${process.env.NEXT_PUBLIC_API_URL || 'http://localhost:5000'}/api/status`);
         if (!response.ok) throw new Error();
         const data = await response.json();
         setStatus(data);
