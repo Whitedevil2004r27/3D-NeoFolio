@@ -47,7 +47,7 @@ export const Preloader = ({ onComplete }: { onComplete: () => void }) => {
       <div className="w-full max-w-md">
         <div className="flex justify-between items-end mb-4">
           <div className="flex flex-col">
-            <span className="text-[10px] text-cyan-400 font-black tracking-[0.4em] uppercase mb-1">System Boot</span>
+            <span className="text-[10px] text-primary font-black tracking-[0.4em] uppercase mb-1">System Boot</span>
             <span className="text-xs text-gray-500 font-mono uppercase">{INITIALIZATION_LOGS[logIndex]}</span>
           </div>
           <span className="text-2xl font-black text-white font-mono">{Math.floor(progress)}%</span>
@@ -55,7 +55,7 @@ export const Preloader = ({ onComplete }: { onComplete: () => void }) => {
         
         <div className="h-1 w-full bg-white/5 rounded-full overflow-hidden border border-white/10 relative">
           <motion.div 
-            className="h-full bg-cyan-400 shadow-[0_0_20px_rgba(0,243,255,0.8)]"
+            className="h-full bg-primary shadow-[0_0_20px_theme(colors.primary/80%)]"
             initial={{ width: "0%" }}
             animate={{ width: `${progress}%` }}
             transition={{ ease: "linear" }}
@@ -67,7 +67,7 @@ export const Preloader = ({ onComplete }: { onComplete: () => void }) => {
             <div key={i} className="flex flex-col gap-2">
               <div className="h-[2px] w-full bg-white/5" />
               <div className="flex justify-between items-center">
-                <div className={`w-1 h-1 rounded-full ${progress > (i + 1) * 30 ? 'bg-cyan-400' : 'bg-gray-800'}`} />
+                <div className={`w-1 h-1 rounded-full ${progress > (i + 1) * 30 ? 'bg-primary' : 'bg-gray-800'}`} />
                 <span className="text-[8px] text-gray-600 font-mono uppercase">Node 0{i+1}</span>
               </div>
             </div>

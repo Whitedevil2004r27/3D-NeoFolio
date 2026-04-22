@@ -27,7 +27,9 @@ export const SplashCursor = () => {
         vy: vy * 0.5 + (Math.random() - 0.5) * 2,
         size,
         life: 1,
-        color: Math.random() > 0.5 ? '#00f3ff' : '#bc13fe'
+        color: Math.random() > 0.5 ? 
+          getComputedStyle(document.documentElement).getPropertyValue('--primary').trim() || '#00f3ff' : 
+          getComputedStyle(document.documentElement).getPropertyValue('--secondary').trim() || '#bc13fe'
       };
     };
 

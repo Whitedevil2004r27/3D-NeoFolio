@@ -51,7 +51,7 @@ export const LoadingScreen = ({ onComplete }: { onComplete: () => void }) => {
       className="fixed inset-0 z-[1000] bg-black flex flex-col items-center justify-center p-8 font-mono"
     >
       <div className="w-full max-w-2xl">
-        <div className="flex justify-between mb-4 text-cyan-400 text-xs tracking-widest font-black">
+        <div className="flex justify-between mb-4 text-primary text-xs tracking-widest font-black">
           <span>SYSTEM_INIT_SEQUENCE</span>
           <span>{progress}%</span>
         </div>
@@ -60,7 +60,7 @@ export const LoadingScreen = ({ onComplete }: { onComplete: () => void }) => {
           <motion.div 
             initial={{ width: 0 }}
             animate={{ width: `${progress}%` }}
-            className="h-full bg-cyan-400 shadow-[0_0_15px_rgba(0,243,255,0.5)]"
+            className="h-full bg-primary shadow-[0_0_15px_theme(colors.primary/50%)]"
           />
         </div>
 
@@ -73,8 +73,8 @@ export const LoadingScreen = ({ onComplete }: { onComplete: () => void }) => {
                 animate={{ opacity: 1, x: 0 }}
                 className="text-[10px] md:text-xs text-gray-500 uppercase tracking-widest flex items-center gap-4"
               >
-                <span className="text-cyan-400/40">[{new Date().toLocaleTimeString()}]</span>
-                <span className={i === LOG_MESSAGES.length - 1 ? "text-cyan-400 font-black" : ""}>
+                <span className="text-primary/40">[{new Date().toLocaleTimeString()}]</span>
+                <span className={i === LOG_MESSAGES.length - 1 ? "text-primary font-black" : ""}>
                   {log}
                 </span>
               </motion.div>
@@ -86,9 +86,9 @@ export const LoadingScreen = ({ onComplete }: { onComplete: () => void }) => {
           <motion.div 
             animate={{ scale: [1, 1.2, 1], opacity: [0.3, 1, 0.3] }}
             transition={{ duration: 2, repeat: Infinity }}
-            className="w-12 h-12 border-2 border-cyan-400/20 rounded-full flex items-center justify-center"
+            className="w-12 h-12 border-2 border-primary/20 rounded-full flex items-center justify-center"
           >
-            <div className="w-2 h-2 bg-cyan-400 rounded-full shadow-[0_0_10px_rgba(0,243,255,1)]" />
+            <div className="w-2 h-2 bg-primary rounded-full shadow-[0_0_10px_theme(colors.primary/100%)]" />
           </motion.div>
           <span className="mt-4 text-[10px] text-gray-700 uppercase tracking-[0.5em]">Establishing Connection</span>
         </div>

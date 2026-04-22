@@ -28,7 +28,7 @@ export const HeroSkills = () => {
           animate={{ y: 0, opacity: 1 }}
           exit={{ y: -20, opacity: 0 }}
           transition={{ duration: 0.5, ease: "circOut" }}
-          className="text-cyan-400 font-mono tracking-[0.4em] text-sm md:text-base font-bold"
+          className="text-primary font-mono tracking-[0.4em] text-sm md:text-base font-bold"
         >
           {skills[index]}
         </motion.div>

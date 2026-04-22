@@ -11,7 +11,7 @@ interface BorderGlowProps {
 const BorderGlow: React.FC<BorderGlowProps> = ({
   children,
   className = "",
-  glowColor = "#00f3ff",
+  glowColor = "var(--primary)",
   duration = 4
 }) => {
   return (

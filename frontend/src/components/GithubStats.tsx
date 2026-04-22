@@ -61,8 +61,8 @@ export const GithubStats = () => {
 
               <div className="relative z-10">
                 <h3 className="text-2xl md:text-3xl font-black mb-12 flex items-center gap-6 uppercase tracking-tighter text-white">
-                  <div className="p-3 bg-cyan-400/10 rounded-xl">
-                    <Github className="text-cyan-400" size={32} />
+                  <div className="p-3 bg-primary/10 rounded-xl">
+                    <Github className="text-primary" size={32} />
                   </div>
                   System Metrics <span className="text-gray-600 font-light">/ {stats.username?.toUpperCase() || 'CORE'}</span>
                 </h3>
@@ -72,21 +72,21 @@ export const GithubStats = () => {
                     <div className="flex items-center gap-3 text-gray-500 uppercase text-[10px] font-black tracking-[0.2em] group-hover:text-yellow-500 transition-colors">
                       <Star size={14} /> Total Impact
                     </div>
-                    <div className="text-4xl md:text-6xl font-black text-white group-hover:text-cyan-400 transition-colors">{stats.totalStars}</div>
+                    <div className="text-4xl md:text-6xl font-black text-white group-hover:text-primary transition-colors">{stats.totalStars}</div>
                     <div className="text-[10px] text-gray-600 font-mono tracking-widest uppercase">Cumulative Stars</div>
                   </div>
                   <div className="flex flex-col gap-3 group">
                     <div className="flex items-center gap-3 text-gray-500 uppercase text-[10px] font-black tracking-[0.2em] group-hover:text-purple-500 transition-colors">
                       <GitCommit size={14} /> Neural Pulses
                     </div>
-                    <div className="text-4xl md:text-6xl font-black text-white group-hover:text-cyan-400 transition-colors">{stats.totalCommits || "800+"}</div>
+                    <div className="text-4xl md:text-6xl font-black text-white group-hover:text-primary transition-colors">{stats.totalCommits || "800+"}</div>
                     <div className="text-[10px] text-gray-600 font-mono tracking-widest uppercase">Verified Commits</div>
                   </div>
                   <div className="flex flex-col gap-3 group">
                     <div className="flex items-center gap-3 text-gray-500 uppercase text-[10px] font-black tracking-[0.2em] group-hover:text-cyan-500 transition-colors">
                       <Book size={14} /> Repository Core
                     </div>
-                    <div className="text-4xl md:text-6xl font-black text-white group-hover:text-cyan-400 transition-colors">{stats.totalRepos}</div>
+                    <div className="text-4xl md:text-6xl font-black text-white group-hover:text-primary transition-colors">{stats.totalRepos}</div>
                     <div className="text-[10px] text-gray-600 font-mono tracking-widest uppercase">Project Nodes</div>
                   </div>
                 </div>

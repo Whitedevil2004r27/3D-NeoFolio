@@ -36,7 +36,7 @@ export const LiveStatus = () => {
       className="flex items-center gap-4 px-5 py-2.5 bg-white/[0.03] backdrop-blur-xl border border-white/10 rounded-full hover:border-primary/30 transition-colors group cursor-default"
     >
       <div className="relative flex items-center justify-center">
-        <div className={`w-2.5 h-2.5 rounded-full ${status.isActive ? 'bg-primary' : 'bg-red-500'} shadow-[0_0_15px_rgba(0,243,255,0.5)]`} />
+        <div className={`w-2.5 h-2.5 rounded-full ${status.isActive ? 'bg-primary' : 'bg-red-500'} shadow-[0_0_15px_theme(colors.primary/50%)]`} />
         <motion.div 
           animate={{ scale: [1, 2, 1], opacity: [0.5, 0, 0.5] }}
           transition={{ duration: 2, repeat: Infinity }}

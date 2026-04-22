@@ -18,12 +18,21 @@ interface DotFieldProps {
 
 const DotField = ({ 
   chunkSize = 35, 
-  dotSize = 1.2, 
-  dotColor = 'rgba(0, 243, 255, 0.15)' 
+  dotSize = 1.2
 }: DotFieldProps) => {
   const canvasRef = useRef<HTMLCanvasElement>(null);
+  const themeColorRef = useRef('rgba(0, 243, 255, 0.15)');
 
   useEffect(() => {
+    const updateColor = () => {
+      const color = getComputedStyle(document.documentElement).getPropertyValue('--primary').trim();
+      if (color) themeColorRef.current = color;
+    };
+    
+    updateColor();
+    const observer = new MutationObserver(updateColor);
+    observer.observe(document.documentElement, { attributes: true, attributeFilter: ['data-theme'] });
+    
     const canvas = canvasRef.current;
     if (!canvas) return;
     const ctx = canvas.getContext('2d');
@@ -51,36 +60,39 @@ const DotField = ({
     const draw = () => {
       ctx.clearRect(0, 0, width, height);
       
-      // Calculate scroll velocity decay
       const currentScrollY = window.scrollY;
       scrollVelocity = (currentScrollY - lastScrollY) * 2;
       lastScrollY = currentScrollY;
-      scrollVelocity *= 0.9; // Decay
+      scrollVelocity *= 0.9;
 
       dots.forEach(dot => {
         const dx = mouse.x - dot.originX;
-        const dy = (mouse.y + window.scrollY) - dot.originY; // Account for page scroll
+        const dy = (mouse.y + window.scrollY) - dot.originY;
         const dist = Math.sqrt(dx * dx + dy * dy);
-        const maxDist = 200; // Increased interaction radius
+        const maxDist = 200;
         
-        ctx.fillStyle = dotColor;
+        // Base dot color with low opacity
+        ctx.fillStyle = themeColorRef.current.includes('rgba') ? themeColorRef.current : `${themeColorRef.current}26`; // 26 is ~15% opacity in hex
 
         if (dist < maxDist) {
           const force = (maxDist - dist) / maxDist;
           dot.x = dot.originX - dx * force * 0.4;
-          // Apply scroll velocity to the Y displacement for "float" effect
           dot.y = dot.originY - (dy * force * 0.4) + (scrollVelocity * force * 0.2);
-          ctx.fillStyle = `rgba(0, 243, 255, ${0.15 + force * 0.4})`;
+          
+          // Brighter color on interaction
+          ctx.fillStyle = themeColorRef.current;
+          ctx.globalAlpha = 0.15 + force * 0.4;
         } else {
-          // Subtle float even when not interacting
           dot.x = dot.originX;
           dot.y = dot.originY + (scrollVelocity * 0.05);
+          ctx.globalAlpha = 0.15;
         }
 
         ctx.beginPath();
         const finalSize = dist < maxDist ? dotSize * 1.5 : dotSize;
         ctx.arc(dot.x, dot.y, finalSize, 0, TWO_PI);
         ctx.fill();
+        ctx.globalAlpha = 1.0;
       });
 
       requestAnimationFrame(draw);
@@ -103,10 +115,11 @@ const DotField = ({
     window.addEventListener('mousemove', handleMouseMove);
     window.addEventListener('resize', handleResize);
     return () => {
+      observer.disconnect();
       window.removeEventListener('mousemove', handleMouseMove);
       window.removeEventListener('resize', handleResize);
     };
-  }, [chunkSize, dotSize, dotColor]);
+  }, [chunkSize, dotSize]);
 
   return (
     <div className="absolute inset-0 pointer-events-none z-0">

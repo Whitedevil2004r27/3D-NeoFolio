@@ -46,8 +46,21 @@ export const Navigation = () => {
   ];
 
   const handleNavClick = (id: string) => {
-    document.getElementById(id)?.scrollIntoView({ behavior: "smooth" });
     setIsOpen(false);
+    // Add a small delay to allow the menu to start closing before scrolling
+    setTimeout(() => {
+      const element = document.getElementById(id);
+      if (element) {
+        const offset = 80;
+        const elementPosition = element.getBoundingClientRect().top + window.scrollY;
+        const offsetPosition = elementPosition - offset;
+
+        window.scrollTo({
+          top: offsetPosition,
+          behavior: "smooth"
+        });
+      }
+    }, 100);
   };
 
   return (
@@ -57,10 +70,10 @@ export const Navigation = () => {
     >
       {/* Premium Glassmorphism Layer */}
       <div className="absolute inset-0 backdrop-blur-[32px] bg-black/40 border-b border-white/5 shadow-[0_0_50px_rgba(0,0,0,0.5)]" />
-      <div className="absolute inset-0 bg-gradient-to-b from-cyan-400/[0.03] to-transparent pointer-events-none" />
+      <div className="absolute inset-0 bg-gradient-to-b from-primary/5 to-transparent pointer-events-none" />
       
       <motion.div 
-        className="absolute bottom-0 left-0 right-0 h-[1.5px] bg-gradient-to-r from-transparent via-primary to-transparent origin-left z-[101] shadow-[0_0_15px_rgba(0,243,255,0.5)]"
+        className="absolute bottom-0 left-0 right-0 h-[1.5px] bg-gradient-to-r from-transparent via-primary to-transparent origin-left z-[101] shadow-[0_0_15px_theme(colors.primary/50%)]"
         style={{ scaleX }}
       />
       
@@ -106,7 +119,7 @@ export const Navigation = () => {
             initial={{ opacity: 0, height: 0 }}
             animate={{ opacity: 1, height: "auto" }}
             exit={{ opacity: 0, height: 0 }}
-            className="md:hidden bg-black/95 border-b border-white/10 overflow-hidden"
+            className="relative z-[110] md:hidden bg-black/95 border-b border-white/10 overflow-hidden"
           >
             <div className="flex flex-col p-6 space-y-6">
               {navItems.map((item) => (

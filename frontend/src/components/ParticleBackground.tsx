@@ -47,7 +47,7 @@ const TechNodes = () => {
               <torusGeometry args={[0.8, 0.2, 16, 32]} />
             )}
             <meshStandardMaterial 
-              color={i % 3 === 0 ? "#00f3ff" : "#bc13fe"} 
+              color={i % 3 === 0 ? "var(--primary)" : "var(--secondary)"} 
               wireframe 
               transparent 
               opacity={0.15} 
@@ -66,8 +66,8 @@ export const ParticleBackground = () => {
         <PerspectiveCamera makeDefault position={[0, 0, 15]} />
         <Stars radius={100} depth={50} count={3000} factor={4} saturation={0} fade speed={1} />
         <ambientLight intensity={0.5} />
-        <pointLight position={[10, 10, 10]} intensity={1} color="#00f3ff" />
-        <pointLight position={[-10, -10, -10]} intensity={1} color="#bc13fe" />
+        <pointLight position={[10, 10, 10]} intensity={1} color="var(--primary)" />
+        <pointLight position={[-10, -10, -10]} intensity={1} color="var(--secondary)" />
         <TechNodes />
       </Canvas>
     </div>

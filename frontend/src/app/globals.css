@@ -3,21 +3,25 @@
 @tailwind utilities;
 
 :root {
-  --neon-cyan: #00f3ff;
-  --neon-purple: #bc13fe;
-  --neon-pink: #ff00de;
-  --primary: var(--neon-cyan);
-  --secondary: var(--neon-purple);
+  --neon-cyan: 0 243 255;
+  --neon-purple: 188 19 254;
+  --neon-pink: 255 0 222;
+  
+  --primary-rgb: var(--neon-cyan);
+  --secondary-rgb: var(--neon-purple);
+  
+  --primary: rgb(var(--primary-rgb));
+  --secondary: rgb(var(--secondary-rgb));
 }
 
 [data-theme="neon-pink"] {
-  --primary: #ec4899; /* pink-500 */
-  --secondary: #3b82f6; /* blue-500 */
+  --primary-rgb: 236 72 153; /* pink-500 */
+  --secondary-rgb: 59 130 246; /* blue-500 */
 }
 
 [data-theme="solar-orange"] {
-  --primary: #f97316; /* orange-500 */
-  --secondary: #dc2626; /* red-600 */
+  --primary-rgb: 249 115 22; /* orange-500 */
+  --secondary-rgb: 220 38 38; /* red-600 */
 }
 
 body {
@@ -54,7 +58,7 @@ body {
 .neon-text {
   @apply tracking-tight font-black;
   color: var(--primary);
-  text-shadow: 0 0 20px var(--primary);
+  text-shadow: 0 0 10px var(--primary);
 }
 
 .cyber-button {

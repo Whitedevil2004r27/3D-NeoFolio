@@ -69,21 +69,21 @@ export const TerminalLoader = ({ onComplete }: { onComplete: () => void }) => {
               opacity: [0.7, 1, 0.7]
             }}
             transition={{ duration: 4, repeat: Infinity, ease: "linear" }}
-            className="w-20 h-20 rounded-full border-t border-cyan-400/50 shadow-[0_0_40px_rgba(0,243,255,0.2)] flex items-center justify-center"
+            className="w-20 h-20 rounded-full border-t border-primary/50 shadow-[0_0_40px_theme(colors.primary/20%)] flex items-center justify-center"
           >
              <div className="w-10 h-10 rounded-full border-b border-purple-500/50 animate-reverse-spin" />
           </motion.div>
         </div>
 
         <div className="bg-white/[0.02] border border-white/10 p-8 rounded-xl backdrop-blur-xl relative overflow-hidden">
-          <div className="absolute top-0 left-0 w-full h-[2px] bg-gradient-to-r from-transparent via-cyan-400/30 to-transparent" />
+          <div className="absolute top-0 left-0 w-full h-[2px] bg-gradient-to-r from-transparent via-primary/30 to-transparent" />
           <div className="space-y-3">
             {bootLines.slice(0, currentLine + 1).map((line, i) => (
               <motion.div 
                 key={i}
                 initial={{ opacity: 0, x: -5 }}
                 animate={{ opacity: 1, x: 0 }}
-                className={`text-[10px] md:text-xs tracking-tight ${i === bootLines.length - 1 ? 'text-cyan-400 font-black' : 'text-gray-400'}`}
+                className={`text-[10px] md:text-xs tracking-tight ${i === bootLines.length - 1 ? 'text-primary font-black' : 'text-gray-400'}`}
               >
                 <span className="text-white/10 mr-4 tabular-nums">[{timestamp}]</span>
                 {line}
@@ -93,7 +93,7 @@ export const TerminalLoader = ({ onComplete }: { onComplete: () => void }) => {
               <motion.div 
                 animate={{ opacity: [1, 0] }}
                 transition={{ duration: 0.4, repeat: Infinity }}
-                className="inline-block w-1.5 h-3 bg-cyan-400 ml-1"
+                className="inline-block w-1.5 h-3 bg-primary ml-1"
               />
             )}
           </div>
@@ -104,12 +104,12 @@ export const TerminalLoader = ({ onComplete }: { onComplete: () => void }) => {
             <motion.div 
               initial={{ width: 0 }}
               animate={{ width: `${(currentLine / bootLines.length) * 100}%` }}
-              className="h-full bg-cyan-400 shadow-[0_0_10px_rgba(0,243,255,1)]"
+              className="h-full bg-primary shadow-[0_0_10px_theme(colors.primary/100%)]"
             />
           </div>
           <div className="mt-3 flex justify-between text-[8px] text-gray-600 font-black tracking-[0.3em] uppercase">
             <span>Kernel Initialization</span>
-            <span className="text-cyan-400/50">{(currentLine / bootLines.length * 100).toFixed(0)}% Complete</span>
+            <span className="text-primary/50">{(currentLine / bootLines.length * 100).toFixed(0)}% Complete</span>
           </div>
         </div>
       </div>

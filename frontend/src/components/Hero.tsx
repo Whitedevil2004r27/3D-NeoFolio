@@ -32,7 +32,7 @@ export const Hero = () => {
           transition={{ duration: 1, ease: "circOut" }} 
           className="mb-8 flex justify-center"
         >
-          <BorderGlow className="p-1 rounded-full shadow-[0_0_50px_rgba(0,243,255,0.2)]">
+          <BorderGlow className="p-1 rounded-full shadow-[0_0_50px_theme(colors.primary/20%)]">
             <motion.div 
               style={{ rotate: useTransform(scrollY, [0, 1000], [0, 360]) }}
               className="responsive-profile overflow-hidden relative"
@@ -49,7 +49,7 @@ export const Hero = () => {
               className="relative inline-block hover:animate-pulse transition-all cursor-default"
               onMouseEnter={triggerNameScramble}
             >
-              HI, I'M <span className="text-transparent bg-clip-text bg-gradient-to-r from-primary via-secondary to-purple-600 drop-shadow-2xl">{scrambledName}</span>
+              HI, I'M <span className="text-transparent bg-clip-text bg-gradient-to-r from-primary via-secondary to-primary/50 drop-shadow-2xl">{scrambledName}</span>
             </span>
           </h1>
           <h2 className="text-xl sm:text-2xl md:text-3xl text-gray-400 mb-8 font-extralight tracking-[0.4em] uppercase min-h-[1.5em]">{scrambledTitle}</h2>
@@ -62,7 +62,7 @@ export const Hero = () => {
         <div className="flex justify-center">
           <Magnetic>
             <motion.button 
-              whileHover={{ scale: 1.05, boxShadow: "0 0 50px rgba(0, 243, 255, 0.6)" }} 
+              whileHover={{ scale: 1.05, boxShadow: "0 0 50px var(--primary)" }} 
               whileTap={{ scale: 0.95 }} 
               onClick={() => document.getElementById("projects")?.scrollIntoView({ behavior: "smooth" })} 
               className="cyber-button px-14 py-6 text-xl font-black rounded-lg border-2 bg-black/50 backdrop-blur-md"

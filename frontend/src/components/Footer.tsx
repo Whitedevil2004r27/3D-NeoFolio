@@ -16,7 +16,7 @@ export const Footer = () => {
       <div className="max-w-7xl mx-auto px-6 text-center">
         <div className="flex justify-center gap-6 mb-8">
            {socials.map((s, i) => (
-             <a key={i} href={s.href} className="p-3 bg-white/5 hover:bg-cyan-400 rounded-full transition-all duration-300">
+             <a key={i} href={s.href} className="p-3 bg-white/5 hover:bg-primary rounded-full transition-all duration-300">
                <s.icon className="w-6 h-6" />
              </a>
            ))}

@@ -39,7 +39,7 @@ export const KnowledgeHub = () => {
             >
               <div className="flex gap-4 mb-6">
                 {post.tags.map((tag: string) => (
-                  <span key={tag} className="text-[10px] uppercase font-black tracking-widest text-cyan-400/70">{tag}</span>
+                  <span key={tag} className="text-[10px] uppercase font-black tracking-widest text-primary/70">{tag}</span>
                 ))}
               </div>
               
@@ -51,7 +51,7 @@ export const KnowledgeHub = () => {
                   <span className="flex items-center gap-1"><Calendar size={14} /> {post.date}</span>
                   <span className="flex items-center gap-1"><Clock size={14} /> {post.readingTime}</span>
                 </div>
-                <BookOpen size={20} className="group-hover:text-cyan-400 transition-colors" />
+                <BookOpen size={20} className="group-hover:text-primary transition-colors" />
               </div>
             </motion.div>
           ))}

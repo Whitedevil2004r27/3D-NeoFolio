@@ -11,8 +11,8 @@ const config: Config = {
       colors: {
         background: "var(--background)",
         foreground: "var(--foreground)",
-        primary: "var(--primary)",
-        secondary: "var(--secondary)",
+        primary: "rgb(var(--primary-rgb) / <alpha-value>)",
+        secondary: "rgb(var(--secondary-rgb) / <alpha-value>)",
         neon: {
           cyan: "#00f3ff",
           purple: "#bc13fe",

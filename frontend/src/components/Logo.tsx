@@ -6,7 +6,7 @@ export const Logo = () => {
   return (
     <div className="flex items-center group cursor-pointer">
       <div className="relative">
-        <div className="absolute -inset-2 bg-gradient-to-r from-cyan-400 to-purple-600 rounded-lg blur opacity-20 group-hover:opacity-50 transition duration-500"></div>
+        <div className="absolute -inset-2 bg-gradient-to-r from-primary to-secondary rounded-lg blur opacity-20 group-hover:opacity-50 transition duration-500"></div>
         <svg
           width="40"
           height="40"

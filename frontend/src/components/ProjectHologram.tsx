@@ -27,7 +27,7 @@ const HologramCore = ({ type }: { type: string }) => {
     return (
       <Sphere ref={meshRef} args={[1.5, 32, 32]}>
         <MeshDistortMaterial
-          color="#00f3ff"
+          color="var(--primary)"
           speed={2}
           distort={0.3}
           wireframe
@@ -42,7 +42,7 @@ const HologramCore = ({ type }: { type: string }) => {
     return (
       <TorusKnot ref={meshRef} args={[1, 0.3, 128, 32]}>
         <MeshWobbleMaterial
-          color="#bc13fe"
+          color="var(--secondary)"
           speed={3}
           factor={0.6}
           wireframe
@@ -54,7 +54,7 @@ const HologramCore = ({ type }: { type: string }) => {
   return (
     <Box ref={meshRef} args={[2, 2, 2]}>
       <MeshDistortMaterial
-        color="#ff00de"
+        color="var(--secondary)"
         speed={1}
         distort={0.2}
         wireframe
@@ -68,8 +68,8 @@ export const ProjectHologram = ({ type }: { type: string }) => {
     <div className="absolute inset-0 z-20 pointer-events-none opacity-0 group-hover:opacity-100 transition-opacity duration-700">
       <Canvas camera={{ position: [0, 0, 5], fov: 45 }}>
         <ambientLight intensity={0.5} />
-        <pointLight position={[10, 10, 10]} intensity={1} color="#00f3ff" />
-        <spotLight position={[-10, -10, -10]} intensity={0.5} color="#bc13fe" />
+        <pointLight position={[10, 10, 10]} intensity={1} color="var(--primary)" />
+        <spotLight position={[-10, -10, -10]} intensity={0.5} color="var(--secondary)" />
         <Float speed={2} rotationIntensity={1} floatIntensity={1}>
           <HologramCore type={type} />
         </Float>

@@ -86,7 +86,7 @@ export const Projects = () => {
           >
             SYSTEM ARTIFACTS
           </h2>
-          <div className="w-24 h-1 bg-primary mx-auto mb-8 shadow-[0_0_15px_rgba(0,243,255,0.5)]" />
+          <div className="w-24 h-1 bg-primary mx-auto mb-8 shadow-[0_0_15px_theme(colors.primary/50%)]" />
           <p className="text-lg md:text-2xl text-gray-500 max-w-2xl mx-auto font-light leading-relaxed uppercase tracking-widest">Repository classification and data extraction.</p>
         </div>
 
@@ -134,7 +134,7 @@ export const Projects = () => {
                   </div>
                 </div>
                 <div className="p-10 flex-1 flex flex-col">
-                  <motion.h3 layoutId={`title-${project.id}`} className="text-xl font-black text-white mb-4 tracking-tighter uppercase group-hover:text-cyan-400 transition-colors">{project.title}</motion.h3>
+                  <motion.h3 layoutId={`title-${project.id}`} className="text-xl font-black text-white mb-4 tracking-tighter uppercase group-hover:text-primary transition-colors">{project.title}</motion.h3>
                   <p className="text-gray-500 text-xs mb-8 line-clamp-3 font-medium uppercase tracking-tight leading-relaxed">{project.description}</p>
                   <div className="mt-auto pt-8 border-t border-white/5 flex flex-wrap gap-2">
                     {project.tech.map((t: string) => (
@@ -166,7 +166,7 @@ export const Projects = () => {
                 layoutId={`card-${project.id}`}
                 className="relative w-full max-w-6xl h-[90vh] md:h-auto max-h-[95vh] bg-black border border-white/10 rounded-2xl overflow-y-auto z-10 p-6 md:p-12 shadow-2xl"
               >
-                <button onClick={() => setSelectedId(null)} className="absolute top-8 right-8 p-3 bg-white/5 rounded-full text-white z-20 hover:bg-cyan-400 hover:text-black transition-all"><X /></button>
+                <button onClick={() => setSelectedId(null)} className="absolute top-8 right-8 p-3 bg-white/5 rounded-full text-white z-20 hover:bg-primary hover:text-black transition-all"><X /></button>
                 
                 <div className="grid grid-cols-1 md:grid-cols-4 gap-6">
                   {/* Bento Header */}
