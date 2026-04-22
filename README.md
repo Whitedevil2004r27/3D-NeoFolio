@@ -92,4 +92,16 @@ The contact form in the **TERMINAL** section is fully integrated. Submissions ar
 
 ---
 
-© 2024 NEOFOLIO-3D | SYSTEM ARCHITECTURE
+## 👤 Author & Credits
+
+**NeoFolio-3D** is architected and maintained by **[Whitedevil2004r27](https://github.com/Whitedevil2004r27)**.
+
+- **Lead Architect**: [Whitedevil2004r27](https://github.com/Whitedevil2004r27)
+- **GitHub Core**: [Whitedevil2004r27/3D-NeoFolio](https://github.com/Whitedevil2004r27/3D-NeoFolio)
+- **Technologies**: Next.js, Three.js, Framer Motion, Express.
+
+Special thanks to the open-source community for the core modules that power this system.
+
+---
+
+© 2024-2026 NEOFOLIO-3D | SYSTEM ARCHITECTURE BY WHITEDEVIL2004R27
